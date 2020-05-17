@@ -53,3 +53,37 @@ static const String id = 'welcome_screen';
 // main.dart
 initialRoute: WelcomeScreen.id,
 ```
+---
+---
+
+# Hero Animation
+The hero animation is a simple animation that only requires 3 steps. The first step is to create 2 Hero Widgets in 2 separate files. The second step is to create a shared tag property. The final step is to make navigator-based screen transitions so that the animation will occur when the screen is changed.
+
+```dart
+
+// welcome_screen.dart
+
+// Step 1: 
+Hero(
+    // Step 2: 
+    tag: 'logo',
+    child: Container(
+    child: Image.asset('images/logo.png'),
+    height: 60.0,
+    ),
+),
+
+//login_screen.dart
+Hero(
+    tag: 'logo',
+    child: Container(
+    height: 200.0,
+    child: Image.asset('images/logo.png'),
+    ),
+    ),
+
+// Step 3: 
+Navigator.pushNamed(context, LoginScreen.id);
+
+
+```
