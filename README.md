@@ -87,3 +87,27 @@ Navigator.pushNamed(context, LoginScreen.id);
 
 
 ```
+
+# Custom Animations
+The `AnimationController` object manages an animation. This object outputs numbers from 0.0 to 1.0 by default. To implement the animation, the user must pass in a `vsync` argument and use a `.forward()` method.  
+
+```dart
+AnimationController controller;
+
+ controller = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
+
+controller.forward();
+```
+
+## Curved Animation
+These animations apply a curve to another animation. The [Curves class](https://api.flutter.dev/flutter/animation/Curves-class.html) has several types of animation curves such as `Curves.decelerate` and `Curves.easeIn`. 
+
+## Tween
+The tween class has a flexible range and is useful for animating between two values. I specifically used the `ColorTween` to animate between two different colors.  
+
+```dart
+animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller);
+```
