@@ -129,3 +129,19 @@ class Duck extends Animal with CanSwim, CanFly {
   
 }
 ```
+
+---
+---
+
+# Prepackaged Animations
+The pub.dev site has many prepackaged animations that are easy to incorporate into your own code. For example, there are [animated_text_kit](https://pub.dev/packages/animated_text_kit), [sprung](https://pub.dev/packages/sprung), and [rubber](https://pub.dev/packages/rubber) animations. 
+
+![TYPEWRITER](doc/typewriter.gif)
+
+```dart
+ TypewriterAnimatedTextKit(
+    speed: Duration(milliseconds: 500),
+    totalRepeatCount: 1,
+    text: ['Flash Chat'],
+    textStyle: TextStyle())
+```
