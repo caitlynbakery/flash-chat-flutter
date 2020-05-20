@@ -111,3 +111,21 @@ The tween class has a flexible range and is useful for animating between two val
 ```dart
 animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller);
 ```
+
+---
+---
+
+# Mixin
+Mixins are a body of code that can be reused within various classes and help the organization of the program. It uses the keyword `mixin` when defining the functionality. A class can call multiple mixins using the `with` keyword.
+
+```dart
+mixin CanSwim {
+  void swim() {
+    print('Changing position by swimming');
+  }
+}
+
+class Duck extends Animal with CanSwim, CanFly {
+  
+}
+```
