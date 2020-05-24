@@ -145,3 +145,62 @@ The pub.dev site has many prepackaged animations that are easy to incorporate in
     text: ['Flash Chat'],
     textStyle: TextStyle())
 ```
+
+# Firebase
+[Firebase](https://firebase.google.com/) is a development platform created by Googlethat includes various functionility to improve your app. For example, Firebase is a real-time database, file storage, authentication system, hosting system and more. 
+
+## FirebaseAuth
+The [firebase_auth](https://pub.dev/packages/firebase_auth) plugin helps authenticate the user and create a new user object.
+
+```dart
+final _auth = FirebaseAuth.instance;
+
+//create a NEW user
+final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+
+//login an EXISTING user
+final signedInUser = await _auth.signInWithEmailAndPassword(email: email, password: password);
+```
+
+## Firestore
+The Cloud Firestore is a NoSQL database that stores data between the client and server. I used the [cloud_firestore](https://pub.dev/packages/cloud_firestore) plugin to utilize the database and add data collections from my app. 
+
+```dart
+ onPressed: () {
+  _firestore.collection('messages').add({
+    'text': messageText,
+    'sender': loggedInUser.email,
+  });
+},
+```
+
+## Firebase WebPage Console
+
+<img width="50%" src="doc/firebase-console.png">
+
+The [Firebase console](https://console.firebase.google.com/u/0/project/flash--chat-61807/overview) has a webpage to manage your projects.
+
+<img src="doc/firebase-auth.png">
+
+One of the tools allows the developer to view the various users who signed into the app.
+
+<img src="doc/firebase-data.png">
+
+Another tool displays a collection of data that holds a map of the user's email and messages. This map is customizable and is set up by the developer. 
+
+
+# Modal Progress Hud
+The [modal_progress_hud](https://pub.dev/packages/modal_progress_hud) plugin creates a widget display to indicate a screen is loading.
+
+```dart
+body: ModalProgressHUD(
+  inAsyncCall: showSpinner,
+  child: Padding(...),
+  onPressMethod: () async {
+    setState(() {
+      showSpinner = true;
+    });
+)
+
+```
+
