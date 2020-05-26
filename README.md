@@ -207,7 +207,7 @@ body: ModalProgressHUD(
 ---
 
 # Streams
-Streams are similar to lists that hold data and set up listeners to recieve events. 
+Streams are similar to lists that hold data and set up listeners to recieve events. The developer 'subscribes' to a stream and is notified every time the database is updated. 
 
 ```dart
 await for(var snapshot in _firestore.collection('messages').snapshots()){
