@@ -215,3 +215,41 @@ await for(var snapshot in _firestore.collection('messages').snapshots()){
         print(message.data);
       }
 ```
+
+---
+---
+
+# ListView
+A ListView widget is a list of scrollable items arranged linearly. This is different from a Column because a Column does not have a scrollable feature and the items would overflow the screen.
+
+```dart
+ListView(
+  padding:
+  EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+  children: messageBubbles,
+),
+```
+
+The Expanded widget controls the size of a child class to fill the available space. It is important so that various widgets are divided to fill up space and are not hidden. 
+
+```dart
+return Expanded(
+          child: ListView())
+```
+
+---
+---
+
+# TextEditingController
+This class controls a text field and updates it when an action occurs. For example, I used the class to clear a text field when a button is pressed.
+
+```dart
+final messageTextController = TextEditingController();
+
+TextField(
+  controller: messageTextController)
+
+ onPressed: () {
+    messageTextController.clear();
+ }
+```
