@@ -253,3 +253,28 @@ TextField(
     messageTextController.clear();
  }
 ```
+ 
+---
+---
+
+# Flexible
+This widget scales the size of another widget to fit a screen. The Flexible widget should be used if you see a yellow and black indicator that something has overflowed. I used it around a `Hero` animation, so that the icon adjusted to the screen size.
+
+```dart
+ Flexible(
+  child: Hero(
+    tag: 'logo',
+    child: Container(
+      height: 200.0,
+      child: Image.asset('images/logo.png'),),),),
+```
+
+---
+---
+
+# Ternary Operator
+The ternary operator is useful to replicate an `if statement`. The `if statement` does NOT work in the `build` method which is why the ternary operator is useful. I changed the color of the messageBubble to blue if `isMe` was true, but else the color is grey.
+
+```dart
+color: isMe ? Colors.lightBlueAccent : Colors.white,
+```
