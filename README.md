@@ -278,3 +278,11 @@ The ternary operator is useful to replicate an `if statement`. The `if statement
 ```dart
 color: isMe ? Colors.lightBlueAccent : Colors.white,
 ```
+
+---
+---
+
+# Firebase Authentication
+In the Firebase console, the developer can edit who is allowed to view/change their database. I edited my console so that only authorized users can access Flash Chat. 
+
+![](doc/rules.png)
